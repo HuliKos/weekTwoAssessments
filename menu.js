@@ -30,9 +30,14 @@
     'kids'
 */
 
-//CODE HERE
-
-
+const pizza = {
+    name:`Pineapple`,
+    price:8.99,
+    category:`Entree`,
+    popularity:10,
+    rating:5,
+    tags:[`weird`,`tasty`,`gluten-free`]
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -42,8 +47,7 @@
     Use dot notation to access the value.
 */
 
-//CODE HERE
-
+console.log(pizza.price)
 
 /*
     Second, log the second tag in your pizza's
@@ -52,7 +56,7 @@
     get the value.
 */
 
-//CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -62,7 +66,8 @@
     Print the value of your new price variable.
 */
 
-//CODE HERE
+let {price} = pizza
+console.log(price)
 
 
 /*
@@ -72,7 +77,8 @@
     Print the value of your category variable. 
 */
 
-//CODE HERE
+let {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,9 +93,44 @@
     data in some functions that you'll write.
 */
 
-//CODE HERE
+const foodArr = [
+    {
+    name:`Cane's`,
+    price:15.99,
+    category:`Entree`,
+    popularity:5,
+    rating:10,
+    tags:[`delicious`,`fat`]},
+    {
+    name:`Abby's`,
+    price:20.99,
+    category:`Entree`,
+    popularity:7,
+    rating:8,
+    tags:[`normal`,`fat`]},
+    {
+    name:`Innout`,
+    price:5.99,
+    category:`Entree`,
+    popularity:8,
+    rating:9,
+    tags:[`normal`,`cheap`,`fat`]},
+    {
+    name:`KFC`,
+    price:7.99,
+    category:`Entree`,
+    popularity:3,
+    rating:3,
+    tags:[`cheap`,`bad`,`fat`]},
+    {
+    name:`whatabuger`,
+    price:6.99,
+    category:`Entree`,
+    popularity:1,
+    rating:1,
+    tags:[`cheap`,`bad`,`fat`]}
 
-
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,8 +146,31 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+// let filteredFoodArr = foodArr.filter((el) =>{
+//      return el.tags.includes('cheap')
+// })
 
+let tagFilteredFood = tag => foodArr.filter((el) =>{
+    return el.tags.includes(tag)})
+
+console.log(tagFilteredFood)
+
+// const filteredFood = (tag) => {
+//     foodArr.forEach(el,i){
+//         for(i=0; i<foodArr[i].tag.length; i++)
+//     }
+// }
+
+
+
+    
+    //     // for(i=0; i<fotags.length; i++){
+    //     // if(foodArr.tags[i] === tag){
+    //         console.log(`You tag '${tag}' matches this food !`)
+    //     }
+    // }
+
+// filteredFood(`normal`)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -117,38 +181,32 @@
     food that has above a certain rating, 
     below a certain price, or any other combo.
 
-    Write a function called `filterByProperty`
-    that takes in three arguments: `property`, 
-    `number`, and `type. 
+    Write a function called `filterByProperty`that takes in three arguments: `property`, `number`, and `type. 
 
-    The property will be a string (rating,
-    popularity, or price)
-
-    The number will be the number that you want
-    to compare against 
-
-    The type should be 'above' or 'below' to 
-    indicate whether you want to get foods with
-    values that are above or below the given number
+    The property will be a string (rating, popularity, or price)
+    The number will be the number that you want to compare against 
+    The type should be 'above' or 'below' to indicate whether you want to get foods with values that are above or below the given number
     for the given property
 
-    Inside the function, create a variable to hold
-    a filtered array
+    Inside the function, create a variable to hold a filtered array
 
     Use the filter method to filter the foodArr
 
-        In the callback, check if the `type` is `above`, 
-        if it is, return objects whose value for the given
+        In the callback, check if the `type` is `above`, if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
-        value for the given property is less than the 
-        `number` passed in
+        If the type isn't `below`, return objects whose value for the given property is less than the `number` passed in
     
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+let filterByProperty = (property, number, type) =>{
+    if(type === 'above' && property > number){
+        console.log(object)
+    } else if(type !='below' & property < number){
+        console.log(object)
+    }
+}
 
 
 /*

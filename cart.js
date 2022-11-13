@@ -35,9 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc,curr) => acc + curr.price, 0)
 
-
+console.log(summedPrice)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -53,9 +53,13 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+let finalPayment = cartTotal * (1 + tax) - couponValue
 
+ console.log(`Your total is ${finalPayment}`)
+}
 
+calcFinalPrice(20,5,.05)
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,8 +82,18 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+Phone number: Unique identifier to locate the order owner
+    Type: string -- No calculation is needed for this information, easier to use string method for further needs
+First and last name: Assisstant information for communicating the order details to the customer
+    Type: string -- General purpose information, easier to use string method for further needs
+Email address: Where the order confirmation details will be provided
+    Type: string -- General purpose information, easier to use string method for further needs
+Address: Collected in case the order is being delivered
+    Type: string -- General purpose information, easier to use string method for further needs
+Credit card info (a package of detailed information, other than exp date): For collecting payment    
+    Type: string -- General purpose information, easier to use string method for further needs
+Creidt card info (Exp date): For collecting payment
+    Type: Date -- Further use for identify the useless credit info
 */
 
 /*
@@ -87,4 +101,20 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+let customer = {
+    phoneNumber: '6264171000',
+    firstName: 'Lan',
+    lastName: 'Kostrikin',
+    emailAddress: 'lankostrikin@gmail.com',
+    addressNumber: '15810',
+    addressStreet: 'Breedlove Pl',
+    addressExtNumber: '135',
+    addressCity: 'Addison',
+    addressState: 'TX',
+    addressZip: '75001',
+    ccNumber: '1234567891011',
+    ccSC: '123'
+}
+
+console.log(customer)
+
