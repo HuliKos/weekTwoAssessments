@@ -21,11 +21,9 @@
     'Welcome back, Andrew'
 */
 
-//CODE HERE
+let greetUser = username => console.log(`Welcome back, ${username}`)
 
-
-
-
+// greetUser(`Andrew`)
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -49,29 +47,43 @@
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-//CODE HERE
-
+let canWeDeliver = zipCode => {
+    if(deliveryAreaZipCodes.includes(zipCode)){
+        console.log(`You're in our delivery zone!`)
+    } else {
+        console.log(`Sorry, we can't deliver to that address`)
+    }
+}
 
 
 /* 
-    Problem 2 Continued
+Problem 2 Continued
 
-    Now you're going to rewrite your function.
+Now you're going to rewrite your function.
 
-    If you wrote `canWeDeliver` using a loop of
-    some kind, write a new function (`canWeDeliverTwo`)
-    below, using the `includes` array method. 
-    Look it up on MDN if you're not sure how to use 
-    it. 
+If you wrote `canWeDeliver` using a loop of
+some kind, write a new function (`canWeDeliverTwo`)
+below, using the `includes` array method. 
+Look it up on MDN if you're not sure how to use 
+it. 
 
-    If you already used the `includes` method, 
-    write a new function using some sort of 
-    loop (for loop, higher order array method).
-    Name your new function `canWeDeliverTwo`.
+If you already used the `includes` method, 
+write a new function using some sort of 
+loop (for loop, higher order array method).
+Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+let canWeDeliverTwo = zipCode =>{
+    for(i=0; i<deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i] === zipCode){
+            return console.log(`You're in our delivery zone!`)
+        }
+    }   console.log(`Sorry, we can't deliver to that address`)
+}
 
+
+// canWeDeliverTwo(85205)
+// canWeDeliverTwo(75001)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -106,21 +118,41 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-//CODE HERE
+// Map method
+
+// const newDeals = deals.map(el =>{
+//     if(el.title === '15% Off!'){
+//         return {...el, title: `10%off`}
+//     }
+//     return el
+// })
+
+
+const index = deals.findIndex(el =>{
+    return el.title === '15% Off!'
+})
+
+deals[index].title = `10% off!`
 
 
 
 /*
-    The restaurant is going to continue its
-    family deal for another month. 
+The restaurant is going to continue its
+family deal for another month. 
 
-    Reassign the value of the second deal's desc
-    to be itself, but use the `replace` method
-    to replace the word March with April.
+Reassign the value of the second deal's desc
+to be itself, but use the `replace` method
+to replace the word March with April.
 
-    You should also make sure that there is no
-    whitespace in this string, since it seems
-    to be displaying wrong on the live site.
+You should also make sure that there is no
+whitespace in this string, since it seems
+to be displaying wrong on the live site.
 */
 
-//CODE HERE
+const indexTwo = deals.findIndex(el =>{
+    return el.desc === '   This deal lasts until the end of March! '
+})
+
+deals[indexTwo].desc = 'This deal lasts until the end of April!'
+
+console.log(deals)
