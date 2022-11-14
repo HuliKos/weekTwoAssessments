@@ -94,42 +94,40 @@ console.log(category)
 */
 
 const foodArr = [
-    {
-    name:`Cane's`,
+    {name:`Cane's`,
     price:15.99,
     category:`Entree`,
     popularity:5,
     rating:10,
     tags:[`delicious`,`fat`]},
-    {
-    name:`Abby's`,
+    
+    {name:`Abby's`,
     price:20.99,
     category:`Entree`,
     popularity:7,
     rating:8,
     tags:[`normal`,`fat`]},
-    {
-    name:`Innout`,
+    
+    {name:`Innout`,
     price:5.99,
     category:`Entree`,
     popularity:8,
     rating:9,
     tags:[`normal`,`cheap`,`fat`]},
-    {
-    name:`KFC`,
+    
+    {name:`KFC`,
     price:7.99,
     category:`Entree`,
     popularity:3,
     rating:3,
     tags:[`cheap`,`bad`,`fat`]},
-    {
-    name:`whatabuger`,
+    
+    {name:`whatabuger`,
     price:6.99,
     category:`Entree`,
     popularity:1,
     rating:1,
     tags:[`cheap`,`bad`,`fat`]}
-
 ]
 
 //////////////////PROBLEM 4////////////////////
@@ -146,31 +144,15 @@ const foodArr = [
 
 //CODE HERE
 
-// let filteredFoodArr = foodArr.filter((el) =>{
-//      return el.tags.includes('cheap')
-// })
+let tagFilteredFood = (tag) =>{
+    for(i=0; i<foodArr.length; i++){
+        if(foodArr[i].tags.includes(tag)){
+            console.log(`Congrats! Your found food ${foodArr[i].name} with desired tag ${tag}!`)
+        }
+    }
+}
 
-let tagFilteredFood = tag => foodArr.filter((el) =>{
-    return el.tags.includes(tag)})
-
-console.log(tagFilteredFood)
-
-// const filteredFood = (tag) => {
-//     foodArr.forEach(el,i){
-//         for(i=0; i<foodArr[i].tag.length; i++)
-//     }
-// }
-
-
-
-    
-    //     // for(i=0; i<fotags.length; i++){
-    //     // if(foodArr.tags[i] === tag){
-    //         console.log(`You tag '${tag}' matches this food !`)
-    //     }
-    // }
-
-// filteredFood(`normal`)
+tagFilteredFood('cheap')
 
 
 //////////////////PROBLEM 5////////////////////
@@ -200,15 +182,19 @@ console.log(tagFilteredFood)
     Return the filtered array from the entire function
 */
 
+// Property ----- String
+// Type ---- Above/Below [Food has a number is above/below respect to the property]
+
 let filterByProperty = (property, number, type) =>{
-    if(type === 'above' && property > number){
-        console.log(object)
-    } else if(type !='below' & property < number){
-        console.log(object)
+    // let res = foodArr.filter(el => el.property > number)
+    // let resBelow = foodArr.filter(el => el.property < number)
+    
+    if(type === `above`){
+        console.log(foodArr.filter(el => el[property] > number))
+    } else if (type =! `below`){
+        console.log(foodArr.filter(el => el[property] < number))
     }
 }
-
-
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -217,3 +203,8 @@ let filterByProperty = (property, number, type) =>{
 */
 
 //CODE HERE
+
+filterByProperty(`rating`,5,`above`)
+
+
+// console.log(res = foodArr.filter(el => el.rating > 5))
